@@ -1,11 +1,11 @@
 import SkipFuseUI
 
 /// The top-level view of the app, containing the primary tabs
-struct ContentView : View {
+@MainActor struct ContentView : View {
     @AppStorage("tab") var tab = Tab.cities
     @State var cityListPath = NavigationPath()
     @State var appearance = ""
-    @Bindable var cityManager = MainActor.assumeIsolated { CityManager.shared }
+    @Bindable var cityManager = CityManager.shared
 
     var body: some View {
         TabView(selection: $tab) {
