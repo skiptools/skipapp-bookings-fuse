@@ -1,4 +1,4 @@
-import SkipFuseUI
+import SwiftUI
 
 /// A link to a city
 struct CityPosterNavigationLink : View {

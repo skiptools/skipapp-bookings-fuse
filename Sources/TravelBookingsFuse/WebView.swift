@@ -1,4 +1,4 @@
-import SkipFuseUI
+import SwiftUI
 #if canImport(WebKit)
 import WebKit
 #endif

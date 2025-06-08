@@ -1,4 +1,4 @@
-import SkipFuseUI
+import SwiftUI
 
 /// The top-level view of the app, containing the primary tabs
 @MainActor struct ContentView : View {

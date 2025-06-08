@@ -1,4 +1,4 @@
-import SkipFuseUI
+import SwiftUI
 
 /// A widget that shows the current temperature for a given city
 struct TemperatureView : View {

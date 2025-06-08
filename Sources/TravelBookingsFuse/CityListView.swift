@@ -1,4 +1,4 @@
-import SkipFuseUI
+import SwiftUI
 
 /// A searchable list of all the cities
 struct CityListView : View {

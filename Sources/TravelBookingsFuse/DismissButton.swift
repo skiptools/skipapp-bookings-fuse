@@ -1,4 +1,4 @@
-import SkipFuseUI
+import SwiftUI
 
 /// A custom button to dismiss the current view and go back in the navigation hierarchy
 struct DismissButton : View {

@@ -1,7 +1,7 @@
 #if canImport(MapKit)
 import MapKit
 #endif
-import SkipFuseUI
+import SwiftUI
 
 struct MapView : View {
     let latitude: Double

@@ -1,4 +1,4 @@
-import SkipFuseUI
+import SwiftUI
 
 struct SettingsView : View {
     @Binding var appearance: String

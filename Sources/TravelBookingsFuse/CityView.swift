@@ -1,4 +1,4 @@
-import SkipFuseUI
+import SwiftUI
 
 /// An overview of a City
 struct CityView : View {

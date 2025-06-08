@@ -1,4 +1,4 @@
-import SkipFuseUI
+import SwiftUI
 
 /// A manager for loading the cities list and handling user favorites
 @Observable @MainActor class CityManager {

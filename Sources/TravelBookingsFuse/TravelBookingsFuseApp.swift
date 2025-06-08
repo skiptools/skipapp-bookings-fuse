@@ -1,6 +1,6 @@
 import Foundation
 import SkipFuse
-import SkipFuseUI
+import SwiftUI
 
 /// A logger for the TravelBookingsFuse module.
 let logger: Logger = Logger(subsystem: "tools.skip.TravelBookingsFuse", category: "TravelBookingsFuse")

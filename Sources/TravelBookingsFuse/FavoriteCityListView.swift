@@ -1,4 +1,4 @@
-import SkipFuseUI
+import SwiftUI
 
 /// An editable list of favorite cities
 struct FavoriteCityListView : View {
