@@ -22,6 +22,9 @@ import androidx.core.app.ActivityCompat
 
 internal val logger: SkipLogger = SkipLogger(subsystem = "travel.bookings.fuse", category = "TravelBookingsFuse")
 
+private typealias AppRootView = TravelBookingsFuseRootView
+private typealias AppDelegate = TravelBookingsFuseAppDelegate
+
 /// AndroidAppMain is the `android.app.Application` entry point, and must match `application android:name` in the AndroidMainfest.xml file.
 open class AndroidAppMain: Application {
     constructor() {
@@ -31,6 +34,7 @@ open class AndroidAppMain: Application {
         super.onCreate()
         logger.info("starting app")
         ProcessInfo.launch(applicationContext)
+        AppDelegate.shared.onInit()
     }
 
     companion object {
@@ -56,6 +60,8 @@ open class MainActivity: AppCompatActivity {
             }
         }
 
+        AppDelegate.shared.onLaunch()
+
         // Example of requesting permissions on startup.
         // These must match the permissions in the AndroidManifest.xml file.
         //let permissions = listOf(
@@ -69,33 +75,33 @@ open class MainActivity: AppCompatActivity {
     }
 
     override fun onStart() {
+        logger.info("onStart")
         super.onStart()
-        TravelBookingsFuseAppDelegate.shared.onStart()
     }
 
     override fun onResume() {
         super.onResume()
-        TravelBookingsFuseAppDelegate.shared.onResume()
+        AppDelegate.shared.onResume()
     }
 
     override fun onPause() {
         super.onPause()
-        TravelBookingsFuseAppDelegate.shared.onPause()
+        AppDelegate.shared.onPause()
     }
 
     override fun onStop() {
         super.onStop()
-        TravelBookingsFuseAppDelegate.shared.onStop()
+        AppDelegate.shared.onStop()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        TravelBookingsFuseAppDelegate.shared.onDestroy()
+        AppDelegate.shared.onDestroy()
     }
 
     override fun onLowMemory() {
         super.onLowMemory()
-        TravelBookingsFuseAppDelegate.shared.onLowMemory()
+        AppDelegate.shared.onLowMemory()
     }
 
     override fun onRestart() {
@@ -126,7 +132,7 @@ internal fun PresentationRootView(context: ComposeContext) {
     PresentationRoot(defaultColorScheme = colorScheme, context = context) { ctx ->
         val contentContext = ctx.content()
         Box(modifier = ctx.modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            TravelBookingsFuseRootView().Compose(context = contentContext)
+            AppRootView().Compose(context = contentContext)
         }
     }
 }
